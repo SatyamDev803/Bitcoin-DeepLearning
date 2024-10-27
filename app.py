@@ -63,7 +63,7 @@ prediction_prices = model.predict(x_test)
 prediction_prices = scaler.inverse_transform(prediction_prices)
 
 st.subheader(f'{user_input} Predicted Price Vs Actual Price Using LSTM Model (Future {future_day} days)')
-# Create a Plotly figure
+# Create a Plotly figurestreamlit run app.py
 fig_lstm = go.Figure()
 # Add trace for actual prices
 fig_lstm.add_trace(go.Scatter(x=test_data.index, y=actual_prices.flatten(), mode='lines', name='Actual Prices', line=dict(color='blue')))
@@ -87,5 +87,3 @@ prediction = scaler.inverse_transform(prediction)
 st.subheader('Next Day Price Prediction')
 st.write(end)
 st.write(prediction)
-
-
